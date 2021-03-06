@@ -10,10 +10,15 @@ public class GunScript : MonoBehaviour
     public int maxAmmo =  12;
     int currentAmmo;
     public TextMeshProUGUI AmmoText;
+    AudioSource shotSound;
+    AudioSource reloadSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource[] sounds = GetComponents<AudioSource>(); //sound[0]: shotSound, sound[1]: reloadSound
+        shotSound = sounds[0];
+        reloadSound = sounds[1];
         currentAmmo = maxAmmo;
         AmmoText.text = currentAmmo.ToString() + "/" + maxAmmo.ToString();
     }
@@ -23,6 +28,7 @@ public class GunScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && currentAmmo > 0)
         {
+            shotSound.Play();
             GameObject tempBullet = Instantiate(bullet);
             tempBullet.transform.position = this.transform.position;
             tempBullet.transform.rotation = this.transform.rotation;
@@ -36,6 +42,7 @@ public class GunScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
         {
+            reloadSound.Play();
             currentAmmo = maxAmmo;
             AmmoText.text = currentAmmo.ToString() + "/" + maxAmmo.ToString();
         }
