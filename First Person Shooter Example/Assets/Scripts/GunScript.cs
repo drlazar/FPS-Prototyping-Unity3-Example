@@ -32,7 +32,7 @@ public class GunScript : MonoBehaviour
             GameObject tempBullet = Instantiate(bullet);
             tempBullet.transform.position = this.transform.position;
             tempBullet.transform.rotation = this.transform.rotation;
-            tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 7000f);
+            tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 5000f);
 
             currentAmmo--;
             AmmoText.text = currentAmmo.ToString() + "/" + maxAmmo.ToString();
@@ -45,6 +45,16 @@ public class GunScript : MonoBehaviour
             reloadSound.Play();
             currentAmmo = maxAmmo;
             AmmoText.text = currentAmmo.ToString() + "/" + maxAmmo.ToString();
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            this.GetComponent<Animation>().Play("ADS");
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            this.GetComponent<Animation>().Play("Hip");
         }
     }
 }

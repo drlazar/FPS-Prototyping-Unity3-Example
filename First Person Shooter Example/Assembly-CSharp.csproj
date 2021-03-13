@@ -73,6 +73,9 @@
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\GunScript.cs" />
+    <Compile Include="Assets\Scripts\TargetScript.cs" />
+    <Compile Include="Assets\Scripts\TargetScript2.cs" />
+    <Compile Include="Assets\Scripts\TargetScript3.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
