@@ -32,7 +32,7 @@ public class GunScript : MonoBehaviour
             GameObject tempBullet = Instantiate(bullet);
             tempBullet.transform.position = this.transform.position;
             tempBullet.transform.rotation = this.transform.rotation;
-            tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 5000f);
+            tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward * 7000f);
 
             currentAmmo--;
             AmmoText.text = currentAmmo.ToString() + "/" + maxAmmo.ToString();
